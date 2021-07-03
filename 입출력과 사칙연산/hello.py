@@ -14,9 +14,8 @@ print('( 0 )"""\\')
 print('|"^"`    |')
 print('||_/=\\\__|')
 
-# A+B
+# 사칙연산 
 a, b = input().split()
 a = int(a)
 b = int(b)
-print(a+b)
-
+print(a+b, a-b, a*b, int(a/b), a%b, sep='\n')
