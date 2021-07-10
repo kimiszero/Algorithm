@@ -37,15 +37,30 @@
 
 # 사분면 고르기
 # 흔한 수학 문제 중 하나는 주어진 점이 어느 사분면에 속하는지 알아내는 것이다. 사분면은 아래 그림처럼 1부터 4까지 번호를 갖는다. "Quadrant n"은 "제n사분면"이라는 뜻이다.
-x = int(input()) 
-y = int(input())
+# x = int(input()) 
+# y = int(input())
+# if x >= -1000 and x <= 1000 and x != 0 and y >= -1000 and y <= 1000 and y != 0 : 
+#     if x > 0 and y > 0 :
+#         print('1')
+#     elif x < 0 and y > 0 :
+#         print('2')
+#     elif x < 0 and y < 0 :
+#         print('3')
+#     else :
+#         print('4')
 
-if x >= -1000 and x <= 1000 and x != 0 and y >= -1000 and y <= 1000 and y != 0 : 
-    if x > 0 and y > 0 :
-        print('1')
-    elif x < 0 and y > 0 :
-        print('2')
-    elif x < 0 and y < 0 :
-        print('3')
-    else :
-        print('4')
+# 알람시계
+H, M = map(int, input().split())
+if H >= 0 and H <= 23 and M >= 0 and M <= 59 :
+   if H == 0 :
+       if M < 45 :
+        print(24-1, M+15)
+       else :
+        print(H, M-45) 
+   else :
+       if M >=45 :
+        print(H, M-45) 
+       else :
+        print(H-1, M+15)
+else :
+    print('24시간 기준으로 입력하세요')
