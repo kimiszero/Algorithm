@@ -7,7 +7,15 @@
 #     print('2부터 9까지 숫자를 입력하세요')
 
 # A + B -3
-T = int(input())
-for i in range(1, T+1) :
-    A, B = map(int, input().split())
-    print(A + B)
+# T = int(input())
+# for i in range(1, T+1) :
+#     A, B = map(int, input().split())
+#     print(A + B)
+
+# 합
+n = int(input())
+sum = 0
+if n >= 1 and n <= 10000 :
+    for i in(range(1, n+1)) :
+        sum += i
+print(sum)    
