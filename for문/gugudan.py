@@ -29,9 +29,16 @@
 #         print(a+b)
 
 # N 찍기
-import sys
+# import sys
 
+# N = int(sys.stdin.readline())
+# if N <= 100000 :
+#    for i in (range(1, N+1)) :
+#        print(i)
+
+# 기찍 N
+import sys
 N = int(sys.stdin.readline())
 if N <= 100000 :
-   for i in (range(1, N+1)) :
-       print(i)
+   for i in reversed(range (N)) :
+       print(i+1)
