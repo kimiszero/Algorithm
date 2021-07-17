@@ -37,8 +37,16 @@
 #        print(i)
 
 # 기찍 N
+# import sys
+# N = int(sys.stdin.readline())
+# if N <= 100000 :
+#    for i in reversed(range (N)) :
+#        print(i+1)
+
+# A + B - 7
 import sys
-N = int(sys.stdin.readline())
-if N <= 100000 :
-   for i in reversed(range (N)) :
-       print(i+1)
+T = int(sys.stdin.readline())
+if T <= 10 :
+    for i in (range(1, T+1)) :
+        A,B = map(int, sys.stdin.readline().split())
+        print('Case #' , i , ': ' , A+B)
