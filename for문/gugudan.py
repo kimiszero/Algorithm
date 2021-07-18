@@ -44,9 +44,20 @@
 #        print(i+1)
 
 # A + B - 7
+# import sys
+# T = int(sys.stdin.readline())
+# if T <= 10 :
+#     for i in (range(1, T+1)) :
+#         A,B = map(int, sys.stdin.readline().split())
+#         print('Case #' , i , ': ' , A+B)
+
+# A + B - 8
 import sys
 T = int(sys.stdin.readline())
-if T <= 10 :
-    for i in (range(1, T+1)) :
-        A,B = map(int, sys.stdin.readline().split())
-        print('Case #' , i , ': ' , A+B)
+for i in (range(1, T+1)) :
+    A,B = map(int, sys.stdin.readline().split())
+    C = A + B
+    if A > 0 and B < 10 : 
+        print(f'Case #{i}: {A} + {B} = {C}')
+    else : 
+        print('A는 0보다 크고 B는 10보다 작아야 합니다.')
