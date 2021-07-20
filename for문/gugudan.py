@@ -63,8 +63,15 @@
 #         print('A는 0보다 크고 B는 10보다 작아야 합니다.')
 
 # 별 찍기 - 1
+# import sys
+# N = int(sys.stdin.readline())
+# if N >= 1 and N <= 100 :
+#     for i in (range (1, N+1)) :
+#         print('*' * i)
+
+# 별 찍기 - 2
 import sys
 N = int(sys.stdin.readline())
 if N >= 1 and N <= 100 :
     for i in (range (1, N+1)) :
-        print('*' * i)
+        print(str('*' * i).rjust(N))
