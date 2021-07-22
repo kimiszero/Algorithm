@@ -70,8 +70,18 @@
 #         print('*' * i)
 
 # 별 찍기 - 2
+# import sys
+# N = int(sys.stdin.readline())
+# if N >= 1 and N <= 100 :
+#     for i in (range (1, N+1)) :
+#         print(str('*' * i).rjust(N))
+
+# X보다 작은 수
 import sys
-N = int(sys.stdin.readline())
-if N >= 1 and N <= 100 :
-    for i in (range (1, N+1)) :
-        print(str('*' * i).rjust(N))
+N,X = map(int, sys.stdin.readline().split())
+if(N,X >=1 and N,X <= 10000) :
+    A = list(map(int, sys.stdin.readline().split()[:N]))
+    print(A)
+    for i in A : 
+        if i < X :
+            print(i, end=' ')
