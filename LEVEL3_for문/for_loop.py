@@ -81,7 +81,6 @@ import sys
 N,X = map(int, sys.stdin.readline().split())
 if(N,X >=1 and N,X <= 10000) :
     A = list(map(int, sys.stdin.readline().split()[:N]))
-    print(A)
     for i in A : 
         if i < X :
             print(i, end=' ')
