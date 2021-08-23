@@ -1,12 +1,12 @@
 N = int(input()) # 배달해야하는 설탕의 킬로그램
+cnt = 0 # 배달의 수
 
-if N % 5 == 0 :
-    print(N // 5)
-elif N % 5 == 3 :
-    print(N // 5 + 1)
-elif N % 3 == 0 :
-    print(N // 3)
-elif N % 3 == 2 :
-    print(N // 3)
+while N >= 0 :
+    if (N % 5) == 0 :
+        cnt += (N // 5)
+        print(cnt)
+        break
+    N -= 3
+    cnt += 1
 else :
-    print(-1)
+    print('-1')
