@@ -1,4 +1,11 @@
-numbers = [1, 2, 3, 4, 5]
-result = [n * 2 for n in numbers if n % 2 == 1]
+N = int(input())
+num = 2
 
-print(result)
+while True:
+    if N % num == 0:
+        N = N // num
+        print(num)
+    elif N == 1:
+        break
+    else:
+        num += 1
