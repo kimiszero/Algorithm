@@ -1,4 +1,4 @@
-#소수인지 판별해주는 함수 
+#소수인지 검사해주는 함수 
 def isPrime(num):
     if num ==  1:
         return False
