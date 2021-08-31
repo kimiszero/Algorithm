@@ -1,6 +1,6 @@
 import math
 
-def num(num): #소수 구하는 함수
+def isPrime(num): #소수 구하는 함수
     if num == 1: # 소수구하는 조건1. 1은 소수가 아니다.
         return False
     else:
@@ -13,7 +13,7 @@ all_list = list(range(2, 246912)) #문제에서 주어진 범위 // 이 범위�
 save_list = []
 
 for i in all_list: #주어진 범위 안에서 소수들을 찾아 저장한다.
-    if num(i):
+    if isPrime(i):
         save_list.append(i)
 
 num = int(input())
