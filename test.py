@@ -1,26 +1,26 @@
 import math
 
-def isPrime(n):#소수 구하는 함수
-    if n == 1: #소수 조건1. 1은 소수가 아니다.
-        return False 
-    else:
-        for i in range(2, int(math.sqrt(n))+1):
-            if n % i == 0:
-                return False
-        return True
+#n이하의 숫자 중 소수 찾기
+def isPrime(n):
+    sieve = [True] * n
+    m = int(math.sqrt(n))
+    for i in range(2, m+1):
+        if sieve[i] == True:
+            for j in range(i+i, n, i):
+                sieve[j] = False
+    return [i for i in range(2, n) if sieve[i] == True]
 
-all_list = list(range(2, 246912)) #문제에서 지정해준 범위
-prime_list = [] #소수의 범위
-for i in all_list: #모든 범위 안에서 반복문을 돌린다. 
-    if isPrime(i):
-        prime_list.append(i)
+#n이하의 소수들 중 합이 n
+def sosu(n):
+    li=isPrime(n)
+    idx = max([i for i in range(len(li)) if li[i]<=n/2])
+    for i in range(idx, -1, -1):
+        for j in range(i, len(li)):
+            if li[i]+li[j] == n:
+                return [li[i], li[j]]
 
-n = int(input()) #입력받은 정수 n
+T = int(input()) #테스트 케이스의 개수 n
 
-while n != 0: #0이 입력되면 종료한다. 
-    count = 0 #소수의 개수
-    for i in prime_list:
-        if n < i <= n*2:
-            count +=1
-    print(count)
-    n = int(input()) #0이 입력될 때까지 새로운 n을 입력받는다.
+for i in range(T+1):
+    n = int(input()) #입력되는 짝수 n
+    print(' '.join(map(str, sosu(n))))
