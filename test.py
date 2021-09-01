@@ -1,26 +1,17 @@
 import math
 
-def isPrime(n):
-    if n == 1:
+# 소수인지 검사해주는 함수
+def isPrime(num):
+    if num == 1: 
         return False
-    else:
-        for i in range(2, int(math.sqrt(n)+1)):
-            if n%i == 0:
+    else:    
+        for i in range(2, int(math.sqrt(num))+1):  
+            if num % i == 0: 
                 return False
         return True
 
-all_list = list(range(2, 246912))
-save_list = []
+M, N = map(int, input().split()) #자연수 M이상 N이하의 소수를 구한다. 
 
-for i in all_list:
+for i in range(M, N+1):
     if isPrime(i):
-        save_list.append(i)
-
-n = int(input())
-while n != 0:
-    count = 0 
-    for i in save_list:
-        if n < i <= n*2:
-            count += 1
-    print(count)
-    n = int(input())
+        print(i)
