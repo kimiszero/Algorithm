@@ -1,26 +1,20 @@
-import math
+prime_list = [False, False] + [True]*10002
 
-#n이하의 숫자 중 소수 찾기
-def isPrime(n):
-    sieve = [True] * n
-    m = int(math.sqrt(n))
-    for i in range(2, m+1):
-        if sieve[i] == True:
-            for j in range(i+i, n, i):
-                sieve[j] = False
-    return [i for i in range(2, n) if sieve[i] == True]
+for i in range(2, 10002):
+    if prime_list[i]:
+        for j in range(2*i, 10002, i):
+            prime_list[j] = False
 
-#n이하의 소수들 중 합이 n
-def sosu(n):
-    li=isPrime(n)
-    idx = max([i for i in range(len(li)) if li[i]<=n/2])
-    for i in range(idx, -1, -1):
-        for j in range(i, len(li)):
-            if li[i]+li[j] == n:
-                return [li[i], li[j]]
+T = int(input()) #입력받는 테스트 케이스의 개수 T
 
-T = int(input()) #테스트 케이스의 개수 n
-
-for i in range(T+1):
-    n = int(input()) #입력되는 짝수 n
-    print(' '.join(map(str, sosu(n))))
+for i in range(T):
+    n = int(input()) #입력받는 짝수 n
+    a = n // 2
+    b = a
+    while a > 0:
+        if prime_list[a] and prime_list[b]:
+            print(a, b)
+            break
+        else:
+            a -= 1
+            b += 1
