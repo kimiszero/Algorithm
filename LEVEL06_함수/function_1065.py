@@ -1,4 +1,4 @@
-X = int(input())
+X = int(input()) #입력받은 정수x 
 cnt = 0
 
 for i in range(1, X+1):
