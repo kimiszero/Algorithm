@@ -8,6 +8,6 @@ for i in range(n):
     a = int(sys.stdin.readline())
     unsorted_list.append(a)
 
-sorted_list = sorted(unsorted_list)
+sorted_list = sorted(set(unsorted_list))
 for i in sorted_list:
     sys.stdout.write(str(i)+'\n')
